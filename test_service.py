@@ -45,6 +45,7 @@ def test_predict(url):
     for i, obj in enumerate(data):
         response = requests.post(url + '/predict', json=obj)
         cond = np.allclose(response.json(), y[i]) and cond
+        print(response.json())
     check(cond, "Predict test")
 
 
